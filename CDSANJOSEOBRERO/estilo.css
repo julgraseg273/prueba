@@ -778,93 +778,87 @@ main.contenido {
     
     /* 1. EL ENCABEZADO Y LOGO */
     .encabezado {
-        flex-direction: column; /* Apila el logo, el título y las redes uno debajo de otro */
+        flex-direction: column; 
         text-align: center;
         gap: 15px;
+        height: auto; /* ◄ Asegura que el contenedor crezca si lo necesita */
     }
     
     .titulo-colegio h1 {
-        font-size: 26px; /* Reducimos el tamaño del título para que quepa en el móvil */
-    }
-    
-    .redes-colegio {
-        text-align: center;
-    }
-    
-    .iconos-redes {
-        justify-content: center; /* Centra las redes superiores */
+        font-size: 26px; 
     }
 
-    /* 2. EL MENÚ DE NAVEGACIÓN */
+    /* 2. EL MENÚ DE NAVEGACIÓN (Evita que se solapen los botones) */
+    .menu-navegacion {
+        height: auto; /* ◄ Quitamos cualquier altura fija */
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
     .menu-navegacion > ul {
-        flex-direction: column; /* Los botones del menú se ponen en lista vertical */
+        flex-direction: column; 
+        width: 100%;
+        gap: 5px; /* Espacio entre botones del menú */
+    }
+    
+    .menu-navegacion li {
         width: 100%;
     }
     
     .menu-navegacion a, .titulo-menu {
         text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        height: auto;        /* ◄ ¡CLAVE! Antes tenía 42px fijos y por eso se solapaban */
+        line-height: normal; /* ◄ Resetea el centrado vertical antiguo */
+        padding: 12px 20px;  /* Le damos espacio para que se pueda pulsar bien */
     }
     
+    /* Desplegables en móvil: para que no floten uno encima de otro */
     .desplegable, .sub-desplegable {
-        position: static; /* Hace que los desplegables se abran hacia abajo empujando el contenido */
+        position: static; 
         width: 100%;
+        box-shadow: none;
     }
 
-    /* 3. EL SLIDER Y LOS ACCESOS */
+    .sub-desplegable {
+        margin-left: 0;
+    }
+
+    /* 3. EL SLIDER Y LOS ACCESOS (Evita que las cajas se pisen) */
     .slide {
-        height: 250px; /* En móvil un slider de 450px es gigante, lo encogemos */
+        height: 220px; 
+        width: 100%; /* Cambiado de 100vw a 100% para evitar desbordamientos */
     }
     
     .accesos {
-        flex-direction: column; /* Las 4 cajas de accesos se ponen una debajo de otra */
+        flex-direction: column; 
         border-radius: 0;
+        height: auto; /* ◄ Permite que las cajas crezcan hacia abajo libremente */
     }
     
     .accesos .cajas-accesos {
+        width: 100%;
         border-right: none;
-        border-bottom: 2px solid black; /* Separación horizontal */
-        min-height: 120px; /* Un poco más bajas para que no saturen */
+        border-bottom: 2px solid black; 
+        min-height: 100px; /* Reducimos la altura para que no sea infinito */
+    }
+
+    .accesos .cajas-accesos a {
+        padding: 15px 10px; /* Menos relleno para que el texto no se salga de la caja */
     }
 
     /* 4. CONTENIDO CENTRAL (ACTUALIDAD Y LATERAL) */
     main.contenido {
-        flex-direction: column; /* ¡CLAVE! La actualidad y el lateral se apilan verticalmente */
+        flex-direction: column; 
+        gap: 20px;
         padding: 10px;
     }
     
     .actualidad, .lateral {
-        width: 100%; /* Ahora ocupan el ancho completo de la pantalla del móvil */
+        width: 100%; 
     }
     
     .noticias-actualidad {
-        grid-template-columns: repeat(1, 1fr); /* Las noticias pasan de 4 columnas a 1 sola columna */
-        gap: 20px;
-    }
-    
-    .actualidad h2 {
-        font-size: 30px; /* Título de actualidad más adecuado para móvil */
-        margin-bottom: 20px;
-    }
-
-    /* 5. EL PIE DE PÁGINA (FOOTER) */
-    .contenido-footer {
-        flex-direction: column; /* Las 4 columnas del footer se ponen una debajo de otra */
-        align-items: center;
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .linea-separacion {
-        width: 60%;
-        margin: 10px auto; /* Centra las líneas discontinuas en el móvil */
-    }
-    
-    .enlaces-f li {
-        padding-left: 0; /* Quitamos el padding para centrar bien el texto */
-    }
-    
-    .enlaces-f li::before {
-        display: none; /* Escondemos el puntito "•" en móvil para que el texto quede centrado limpio */
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
