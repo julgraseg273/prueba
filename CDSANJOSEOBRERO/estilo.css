@@ -776,89 +776,94 @@ main.contenido {
 
 @media screen and (max-width: 768px) {
     
-    /* 1. EL ENCABEZADO Y LOGO */
+    /* 1. ENCABEZADO */
     .encabezado {
         flex-direction: column; 
         text-align: center;
         gap: 15px;
-        height: auto; /* ◄ Asegura que el contenedor crezca si lo necesita */
+        height: auto;
+        background-color: green; /* Ponemos el fondo verde ya desde arriba para que se lea el texto blanco */
     }
     
     .titulo-colegio h1 {
-        font-size: 26px; 
+        font-size: 24px; 
     }
 
-    /* 2. EL MENÚ DE NAVEGACIÓN (Evita que se solapen los botones) */
+    /* 2. EL MENÚ DE NAVEGACIÓN (Corregido el solapamiento) */
     .menu-navegacion {
-        height: auto; /* ◄ Quitamos cualquier altura fija */
+        display: flex;
         flex-direction: column;
-        margin-bottom: 25px;
+        width: 100%;
+        height: auto;
+        position: static; /* ◄ ¡CLAVE! Deja de flotar y empuja el contenido hacia abajo */
+        background-color: #004d26; /* ◄ Verde oscuro sólido para separar el menú de las fotos */
+        margin-bottom: 0;
+        padding: 10px 0;
     }
 
     .menu-navegacion > ul {
         flex-direction: column; 
         width: 100%;
-        gap: 5px; /* Espacio entre botones del menú */
+        gap: 0; 
     }
     
     .menu-navegacion li {
         width: 100%;
+        position: relative;
     }
     
     .menu-navegacion a, .titulo-menu {
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        height: auto;        /* ◄ ¡CLAVE! Antes tenía 42px fijos y por eso se solapaban */
-        line-height: normal; /* ◄ Resetea el centrado vertical antiguo */
-        padding: 12px 20px;  /* Le damos espacio para que se pueda pulsar bien */
+        width: 100%;
+        height: auto;        
+        line-height: normal; 
+        padding: 14px 20px;  /* Botones más grandes y cómodos para el dedo */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil de separación */
     }
     
-    /* Desplegables en móvil: para que no floten uno encima de otro */
+    /* Desplegables en móvil (Para que no se monten en horizontal) */
     .desplegable, .sub-desplegable {
-        position: static; 
+        position: static; /* ◄ Se abren hacia abajo de forma natural */
         width: 100%;
+        background-color: #ffffff; /* Fondo blanco para las subopciones */
         box-shadow: none;
     }
-
-    .sub-desplegable {
-        margin-left: 0;
+    
+    .desplegable li a, .sub-desplegable li a {
+        color: #000000 !important; /* Texto negro en los desplegables */
+        background-color: #f4f4f4 !important;
+        padding: 12px 20px;
     }
 
-    /* 3. EL SLIDER Y LOS ACCESOS (Evita que las cajas se pisen) */
+    /* 3. EL SLIDER Y LOS ACCESOS (Espaciados y ordenados) */
     .slide {
-        height: 220px; 
-        width: 100%; /* Cambiado de 100vw a 100% para evitar desbordamientos */
+        height: 200px; /* Reducimos la altura en móvil para que quepa bien la ilustración */
+        width: 100%; 
+        position: relative;
+    }
+    
+    .slide .flecha {
+        font-size: 28px; /* Flechas del slider un pelín más pequeñas */
     }
     
     .accesos {
-        flex-direction: column; 
+        display: flex;
+        flex-direction: column; /* ◄ Las 4 franjas de colores (Fundación, Secretaría...) una debajo de otra */
+        border: none;
         border-radius: 0;
-        height: auto; /* ◄ Permite que las cajas crezcan hacia abajo libremente */
+        height: auto; 
     }
     
     .accesos .cajas-accesos {
         width: 100%;
         border-right: none;
-        border-bottom: 2px solid black; 
-        min-height: 100px; /* Reducimos la altura para que no sea infinito */
+        border-bottom: 2px solid #000000; 
+        min-height: 120px; /* Altura ideal para que luzcan los escudos traseros */
     }
 
     .accesos .cajas-accesos a {
-        padding: 15px 10px; /* Menos relleno para que el texto no se salga de la caja */
-    }
-
-    /* 4. CONTENIDO CENTRAL (ACTUALIDAD Y LATERAL) */
-    main.contenido {
-        flex-direction: column; 
-        gap: 20px;
-        padding: 10px;
-    }
-    
-    .actualidad, .lateral {
-        width: 100%; 
-    }
-    
-    .noticias-actualidad {
-        grid-template-columns: repeat(1, 1fr); 
+        padding: 20px 10px;
+        font-size: 16px;
+        font-weight: bold;
     }
 }
