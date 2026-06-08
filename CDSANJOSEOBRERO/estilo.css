@@ -1,0 +1,870 @@
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES GENERALES */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.slide, .accesos, .actualidad , .lateral, .footer {
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA EL HEADER */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+
+
+.titulo-colegio h1 {
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.redes-colegio {
+    
+    text-align: right;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.iconos-redes{
+    
+    display: flex;
+    margin-top: 5px;
+    gap: 10px;
+    
+}
+
+.iconos-redes img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s;
+}
+
+.iconos-redes a img:hover { /* HACE ZOOM EN LOS ICONOS AL PASAR EL RATON SOBRE ELLOS */
+    transform: scale(1.3);
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA LA BARRA DE NAVEGACION */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+.menu-navegacion {
+    display: flex;
+    gap: 0; /* hace que las opcionas aparezcan pegadas unas a otras */
+    margin-bottom: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+
+} 
+
+
+.menu-navegacion > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-navegacion li {
+    position: relative;
+    
+}
+
+
+.menu-navegacion a, .titulo-menu {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: -2px;
+    height: 42px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: color 0.2s ease, transform 0.2s ease;
+    
+}
+
+
+.menu-navegacion li:hover > a, 
+.menu-navegacion li:hover > .titulo-menu {
+    color: green;   /* al pasar el raton por las opciones de la barra cambia de color la opcion seleccionada */
+    text-decoration: underline;
+}
+
+.desplegable, .sub-desplegable{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    min-width: 220px;
+    z-index: 1100;
+    border: none;
+    background-color: white;
+    
+    
+}
+
+.desplegable li, .sub-desplegable li{
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
+}
+
+.menu-navegacion li:hover > .desplegable,
+.desplegable li:hover > .sub-desplegable {
+    display: block;
+}
+
+.sub-desplegable {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: -2px;
+    min-width: 220px;
+    
+}
+
+.menu-navegacion .desplegable a,
+.menu-navegacion .sub-desplegable a,
+.menu-navegacion .desplegable .titulo-menu,
+.menu-navegacion .sub-desplegable .titulo-menu {
+    color: #000000;         
+    text-shadow: none;      
+    background-color: #FFFFFF; 
+    font-weight: normal;    
+    text-transform: none;    
+    margin-bottom: 0;  
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08); 
+    transition: background-color 0.2s, color 0.2s;
+     
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES CONTENIDO DE LA PAGINA */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+.slide {
+  
+    position: relative;
+    width: 100vw;
+    height: 450px;
+    margin-bottom: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url('IMAGENES/centro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0;
+    box-shadow: none;
+    
+}
+
+
+/*PARA PONER TEXTO EN EL SLIDE */
+/* .slide .contenido-slide {
+   
+}
+*/   
+
+
+
+.slide .flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    
+}
+
+.slide .flecha:first-of-type {  /* < Pegada a la izquierda */
+    left: 30px;                   
+}
+
+.slide .flecha:last-of-type { /* > Pegada a la derecha */
+    right: 30px;                 
+}
+
+
+.slide .flecha:hover {
+    background-color: transparent;
+    color: green;
+}
+
+
+.accesos {
+    display: flex;
+    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-top: none;
+    box-shadow: none;
+    border-radius: 0 0 12px 12px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.accesos .cajas-accesos {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    min-height: 180px;
+    font-size: 15px;
+    line-height: 1.4;
+    cursor: pointer;
+    border-right: 2px solid black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.accesos .cajas-accesos a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 25px 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.accesos .cajas-accesos:last-child {
+    border-right: none;
+}
+
+.accesos .cajas-accesos:hover a{
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    color: green;
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA EL FONDO DE LOS BOTONES CENTRALES */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+#acceso-fundacion {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('IMAGENES/fundacion-imagen.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#acceso-secretaria {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('IMAGENES/secretaria-imagen.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#acceso-admision {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('IMAGENES/admision-imagen.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#acceso-intranet {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('IMAGENES/intranet-imagen.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA EL CONTENIDO CENTRAL DE ACTUALIDAD */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+main.contenido {
+    display: flex;               
+    flex-direction: row;          
+    justify-content: space-between;
+    gap: 30px;                   
+    width: 100%;
+    max-width: 100%;             
+    margin: 0;            
+    padding: 0;              
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.actualidad {
+    width: 75%;                  
+    background-color: #ffffff;    
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    border-radius: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03); 
+}
+
+.actualidad h2 {
+    text-align: center;
+    font-size: 45px;             
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: green;                 
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+.noticias-actualidad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* opcion para colocar las cajas de noticias en columnas o seguidas */
+    gap: 30px;                             
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.cajas-noticias {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+}
+
+
+.cajas-noticias img {
+    width: 100%;
+    aspect-ratio: 16 / 10;  /* hace que siempre mantenga esa proporcion */
+    object-fit: cover;  /* ajusta la imagen a su sitio */                     
+    border-radius: 6px;                    
+    transition: transform 0.2s ease;
+}
+
+
+.cajas-noticias p {
+    font-size: 16px;
+    line-height: 1.45;
+    color: black;
+    font-weight: 500;
+    margin: 12px 0 0 0;                  
+    text-align: left;
+}
+
+
+.cajas-noticias:hover p {
+    color: green;
+}
+.cajas-noticias:hover img {
+    transform: scale(1.02);     
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA LA BARRA LATERAL */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+.lateral {
+    width: 22%;                   
+    background-color: #ffffff;
+    padding: 10px;
+    height: fit-content;         
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    box-sizing: border-box;
+    
+}
+
+.lateral h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px; 
+    padding-bottom: 8px;
+    color: green;
+    font-weight: 700;
+}
+
+
+.noticias-lateral {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);  /* opcion para colocar las cajas de noticias en columnas o seguidas */
+    gap: 30px;                             
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.cajas-lateral {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+}
+
+
+.cajas-lateral img {
+    width: 100%;
+    aspect-ratio: 16 / 7;  /* hace que siempre mantenga esa proporcion */
+    object-fit: cover;  /* ajusta la imagen a su sitio */                     
+    border-radius: 6px;                    
+    transition: transform 0.2s ease;
+}
+
+
+.cajas-lateral p {
+    font-size: 16px;
+    line-height: 1.45;
+    color: black;
+    font-weight: 500;
+    margin: 12px 0 0 0;                  
+    text-align: left;
+}
+
+
+.cajas-lateral:hover p {
+    color: green;
+}
+.cajas-lateral:hover img {
+    transform: scale(1.02);     
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+
+
+
+
+
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* PROPIEDADES PARA EL PIE DE PAGINA */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+.pie-pagina {
+    background-color: green;
+    color: white;
+    width: 100%;
+    margin-top: 80px;         
+    padding-top: 50px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenido-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0 20px 40px 20px;
+}
+
+.columna-enlaces-footer {
+    flex: 1;
+}
+
+.columna-logo-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-footer {
+    max-width: 110px;
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2)); /* Añade una sombra al logo */
+}
+
+.columna-info-footer h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.columna-info-footer p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 4px 0;
+    color: whitesmoke;
+}
+
+.linea-separacion{
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.50);
+}
+
+.enlaces-f {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.enlaces-f li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.enlaces-f li::before {  /* para volver a colocar el puntito al lado de las opciones */
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: white;
+    font-size: 16px;
+}
+
+.enlaces-f a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.enlaces-f a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.redes-footer {
+    display: flex;
+    gap: 10px;
+}
+
+.redes-footer a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-size: 23px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.redes-footer .youtube {
+    background-image: url('IMAGENES/youtube.png');
+}
+
+.redes-footer .instagram {
+    background-image: url('IMAGENES/instagram.png');
+}
+
+.redes-footer .facebook {
+    background-image: url('IMAGENES/facebook.png');
+}
+
+.redes-footer a:hover {
+    background-color: green;
+    transform: scale(1.1);
+}
+
+.copyright-footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.copyright-footer p {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+/* ============================================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. EL ENCABEZADO Y LOGO */
+    .encabezado {
+        flex-direction: column; /* Apila el logo, el título y las redes uno debajo de otro */
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .titulo-colegio h1 {
+        font-size: 26px; /* Reducimos el tamaño del título para que quepa en el móvil */
+    }
+    
+    .redes-colegio {
+        text-align: center;
+    }
+    
+    .iconos-redes {
+        justify-content: center; /* Centra las redes superiores */
+    }
+
+    /* 2. EL MENÚ DE NAVEGACIÓN */
+    .menu-navegacion > ul {
+        flex-direction: column; /* Los botones del menú se ponen en lista vertical */
+        width: 100%;
+    }
+    
+    .menu-navegacion a, .titulo-menu {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .desplegable, .sub-desplegable {
+        position: static; /* Hace que los desplegables se abran hacia abajo empujando el contenido */
+        width: 100%;
+    }
+
+    /* 3. EL SLIDER Y LOS ACCESOS */
+    .slide {
+        height: 250px; /* En móvil un slider de 450px es gigante, lo encogemos */
+    }
+    
+    .accesos {
+        flex-direction: column; /* Las 4 cajas de accesos se ponen una debajo de otra */
+        border-radius: 0;
+    }
+    
+    .accesos .cajas-accesos {
+        border-right: none;
+        border-bottom: 2px solid black; /* Separación horizontal */
+        min-height: 120px; /* Un poco más bajas para que no saturen */
+    }
+
+    /* 4. CONTENIDO CENTRAL (ACTUALIDAD Y LATERAL) */
+    main.contenido {
+        flex-direction: column; /* ¡CLAVE! La actualidad y el lateral se apilan verticalmente */
+        padding: 10px;
+    }
+    
+    .actualidad, .lateral {
+        width: 100%; /* Ahora ocupan el ancho completo de la pantalla del móvil */
+    }
+    
+    .noticias-actualidad {
+        grid-template-columns: repeat(1, 1fr); /* Las noticias pasan de 4 columnas a 1 sola columna */
+        gap: 20px;
+    }
+    
+    .actualidad h2 {
+        font-size: 30px; /* Título de actualidad más adecuado para móvil */
+        margin-bottom: 20px;
+    }
+
+    /* 5. EL PIE DE PÁGINA (FOOTER) */
+    .contenido-footer {
+        flex-direction: column; /* Las 4 columnas del footer se ponen una debajo de otra */
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .linea-separacion {
+        width: 60%;
+        margin: 10px auto; /* Centra las líneas discontinuas en el móvil */
+    }
+    
+    .enlaces-f li {
+        padding-left: 0; /* Quitamos el padding para centrar bien el texto */
+    }
+    
+    .enlaces-f li::before {
+        display: none; /* Escondemos el puntito "•" en móvil para que el texto quede centrado limpio */
+    }
+}
